@@ -32,4 +32,16 @@ void add_node(Node*& root, int a)
         add_node(root->conphai, a);
 }
 
+// tim kiem tren BST
+Node* search_BST(Node* root, int a)
+{
+	if(root->cha == a)
+        return root;
+    if(root == NULL)
+        return NULL;
+    if(a <= root->cha)
+        return search_BST(root->contrai, a);
+    else
+        return search_BST(root->conphai, a);
+}
 
