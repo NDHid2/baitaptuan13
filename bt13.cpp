@@ -45,3 +45,29 @@ Node* search_BST(Node* root, int a)
         return search_BST(root->conphai, a);
 }
 
+int main()
+{
+    int a[] = {2001, 2002, 2006, 2007, 2003, 2004, 2005, 2001, 1999, 2004};
+
+    int n = sizeof(a) / sizeof(a[0]);
+
+    Node* BST = Initial_BST();
+
+    for(int i = 0; i < n; i++) {add_node(BST, a[i]);}
+
+    int namsinh;
+
+    cout << "Nhap nam sinh can tim: ";
+    cin >> namsinh;
+
+    Node* p = search_BST(BST, namsinh);
+
+    if(p == NULL)
+        cout << "\n Khong tim thay sinh vien co nam sinh " << namsinh;
+    else
+        cout << "\n Tim thay sinh vien co nam sinh " << namsinh;
+
+    return 0;
+}
+
+
